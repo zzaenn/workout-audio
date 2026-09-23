@@ -1,0 +1,169 @@
+# Workout audio PROGRAM — exercises, order, sets, reps.
+# This is the file that changes: weekly progression, tweaks, swaps.
+# History is kept by git — every save is a timestamped version; no manual copies needed.
+# Stable stuff (rules, beeps, timings) lives in settings.yaml.
+
+# ==================== PRIMER — same every day, in this order ====================
+primer:
+  rounds: 2
+  moves:
+    - id: breath
+      label: 90/90 breathing
+      reps: 5
+      inhale_s: 5
+      exhale_s: 3
+    - id: deadbug
+      label: Dead bug
+      reps: 8
+      sides: alternating   # right, left, right, left... one continuous set
+    - id: glutebridge
+      label: Glute bridge
+      reps: 10
+    - id: catcow
+      label: Cat-cow
+      reps: 8
+    - id: birddog
+      label: Bird dog
+      reps: 6
+      sides: alternating   # right, left, right, left... one continuous set
+
+# ==================== COMPOUNDS — 3-round circuit ====================
+compounds:
+  rounds: 3
+  days:
+    monday:
+      - id: incline
+        label: Incline push-up
+        reps: 6
+      - id: row
+        label: One-arm band row
+        reps: 10
+        sides: [right, left]   # all right reps, switch pause, then all left reps
+      - id: splitsquat
+        label: Split squat
+        reps: 8
+        sides: [right, left]
+    wednesday:
+      - id: pike
+        label: Pike push-up
+        reps: 5
+      - id: scap
+        label: Scapular pull-up
+        reps: 8
+      - id: rdl
+        label: Band RDL
+        reps: 12
+    friday:
+      - id: incline
+        label: Incline push-up
+        reps: 6
+      - id: scap
+        label: Scapular pull-up
+        reps: 8
+      - id: splitsquat
+        label: Split squat
+        reps: 8
+        sides: [right, left]
+
+# ==================== ACCESSORIES — 2 sets each, in this order ====================
+accessories:
+  sets: 2
+  days:
+    monday:
+      - id: curl
+        label: Bicep curl
+        reps: 12
+      - id: pushdown
+        label: Tricep pushdown
+        reps: 12
+      - id: latraise1
+        label: One-arm lateral raise
+        reps: 10
+        sides: [right, left]
+    wednesday:
+      - id: hammer
+        label: Hammer curl
+        reps: 10
+      - id: facepull
+        label: Face pull
+        reps: 12
+      - id: calf
+        label: Standing calf raise
+        reps: 12
+    friday:
+      - id: overhead
+        label: Overhead tricep extension
+        reps: 10
+      - id: revgrip
+        label: Reverse-grip curl
+        reps: 10
+      - id: latraise
+        label: Lateral raise
+        reps: 10
+
+# ==================== STRETCHES ====================
+# Reference only for now — the builder does not read this section yet.
+# It will be wired in before any audio is generated.
+stretches:
+  A:
+    rounds: 2
+    holds_s: 30
+    moves:
+      - id: hipflexor
+        label: Hip flexor stretch
+        sides: [left, right]
+      - id: hamstring
+        label: Standing hamstring hinge
+        sides: [left, right]
+      - id: quad
+        label: Standing quad stretch
+        sides: [left, right]
+      - id: lat
+        label: Lat stretch
+      - id: chest
+        label: Chest stretch
+        sides: [left, right]
+      - id: childs
+        label: Child's pose
+  B:
+    rounds: 2
+    holds_s: 30
+    round1:
+      - id: hipflexor
+        label: Hip flexor stretch
+        sides: [left, right]
+      - id: hamstring
+        label: Standing hamstring hinge
+        sides: [left, right]
+      - id: quad
+        label: Standing quad stretch
+        sides: [left, right]
+      - id: lat
+        label: Lat stretch
+      - id: chest
+        label: Chest stretch
+        sides: [left, right]
+      - id: childs
+        label: Child's pose
+      - id: calf
+        label: Calf raises
+        sides: [left, right]
+    round2:
+      - id: hipflexor
+        label: Hip flexor stretch
+        sides: [left, right]
+      - id: hamstring
+        label: Standing hamstring hinge
+        sides: [left, right]
+      - id: quad
+        label: Standing quad stretch
+        sides: [left, right]
+      - id: lat
+        label: Lat stretch
+      - id: deadhang
+        label: Dead hang
+      - id: childs
+        label: Child's pose
+      - id: calf
+        label: Calf raises
+        sides: [left, right]

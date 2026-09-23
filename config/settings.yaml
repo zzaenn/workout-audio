@@ -1,0 +1,30 @@
+# Workout audio SETTINGS — the stable stuff: rules, beeps, timings.
+# Rarely changes. The program (exercises, order, sets, reps) lives in program.yaml.
+# Both files are fed into the workout builder to make the audio.
+
+# ==================== RULES — apply to every exercise ====================
+rules:
+  # REP COUNTING: only the last three reps of a set are ever spoken aloud,
+  # each named at the start of its rep.  ("Eight. Nine. Ten.")
+  # Short sets follow the same rule: 5 reps -> "Three. Four. Five."
+  rep_counting: last_three
+
+# BEEPS:
+#   low beep  = the rep starts.  (breathing: the inhale starts)
+#   high beep = halfway through the rep.  (breathing: the exhale starts)
+#
+# UNILATERAL MOVES come in two flavors, spelled out per exercise in program.yaml:
+#   sides: alternating    -> right, left, right, left... inside the set.
+#                            No switch pause. (dead bug, bird dog)
+#   sides: [right, left]  -> all right-side reps, a 10s "switch sides" pause,
+#                            then all left-side reps. (rows, split squats, ...)
+
+# ==================== TIMING ====================
+timing:
+  rep_seconds: 8              # one rep = 8s (4s down, 4s up)
+  down_beep_hz: 660           # low beep: rep start / inhale start
+  up_beep_hz: 990             # high beep: rep mid-point / exhale start
+  rest_between_exercises_s: 60  # between compound moves
+  rest_between_sets_s: 30       # between accessory sets
+  rest_between_rounds_s: 90     # between compound rounds
+  side_switch_s: 10             # "switch sides" pause inside blocked unilateral moves
