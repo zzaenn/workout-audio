@@ -8,16 +8,15 @@ rules:
   # each named at the start of its rep.  ("Eight. Nine. Ten.")
   # Short sets follow the same rule: 5 reps -> "Three. Four. Five."
   rep_counting: last_three
+  # SIDE PATTERNS — the only two ways unilateral moves are performed.
+  # Spelled out per exercise in program.yaml as `sides:`.
+  side_patterns:
+    alternating: "right, left, right, left... inside one set; no pause between sides"
+    blocked: "sides: [right, left] — all reps on the first side, a 10s 'switch sides' pause, then all reps on the other side"
 
 # BEEPS:
 #   low beep  = the rep starts.  (breathing: the inhale starts)
 #   high beep = halfway through the rep.  (breathing: the exhale starts)
-#
-# UNILATERAL MOVES come in two flavors, spelled out per exercise in program.yaml:
-#   sides: alternating    -> right, left, right, left... inside the set.
-#                            No switch pause. (dead bug, bird dog)
-#   sides: [right, left]  -> all right-side reps, a 10s "switch sides" pause,
-#                            then all left-side reps. (rows, split squats, ...)
 
 # ==================== TIMING ====================
 timing:

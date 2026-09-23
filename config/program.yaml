@@ -15,7 +15,7 @@ primer:
     - id: deadbug
       label: Dead bug
       reps: 8
-      sides: alternating   # right, left, right, left... one continuous set
+      sides: alternating
     - id: glutebridge
       label: Glute bridge
       reps: 10
@@ -25,7 +25,7 @@ primer:
     - id: birddog
       label: Bird dog
       reps: 6
-      sides: alternating   # right, left, right, left... one continuous set
+      sides: alternating
 
 # ==================== COMPOUNDS — 3-round circuit ====================
 compounds:
@@ -38,11 +38,10 @@ compounds:
       - id: row
         label: One-arm band row
         reps: 10
-        sides: [right, left]   # all right reps, switch pause, then all left reps
-      - id: splitsquat
-        label: Split squat
-        reps: 8
         sides: [right, left]
+      - id: rdl
+        label: Band RDL
+        reps: 12
     wednesday:
       - id: pike
         label: Pike push-up
@@ -50,9 +49,10 @@ compounds:
       - id: scap
         label: Scapular pull-up
         reps: 8
-      - id: rdl
-        label: Band RDL
-        reps: 12
+      - id: splitsquat
+        label: Split squat
+        reps: 8
+        sides: [right, left]
     friday:
       - id: incline
         label: Incline push-up
@@ -101,69 +101,89 @@ accessories:
         label: Lateral raise
         reps: 10
 
-# ==================== STRETCHES ====================
-# Reference only for now — the builder does not read this section yet.
-# It will be wired in before any audio is generated.
+# ==================== STRETCHES — day-specific, 30s holds ====================
 stretches:
-  A:
-    rounds: 2
-    holds_s: 30
-    moves:
-      - id: hipflexor
-        label: Hip flexor stretch
-        sides: [left, right]
-      - id: hamstring
-        label: Standing hamstring hinge
-        sides: [left, right]
-      - id: quad
-        label: Standing quad stretch
-        sides: [left, right]
-      - id: lat
-        label: Lat stretch
-      - id: chest
-        label: Chest stretch
-        sides: [left, right]
-      - id: childs
-        label: Child's pose
-  B:
-    rounds: 2
-    holds_s: 30
-    round1:
-      - id: hipflexor
-        label: Hip flexor stretch
-        sides: [left, right]
-      - id: hamstring
-        label: Standing hamstring hinge
-        sides: [left, right]
-      - id: quad
-        label: Standing quad stretch
-        sides: [left, right]
-      - id: lat
-        label: Lat stretch
-      - id: chest
-        label: Chest stretch
-        sides: [left, right]
-      - id: childs
-        label: Child's pose
-      - id: calf
-        label: Calf raises
-        sides: [left, right]
-    round2:
-      - id: hipflexor
-        label: Hip flexor stretch
-        sides: [left, right]
-      - id: hamstring
-        label: Standing hamstring hinge
-        sides: [left, right]
-      - id: quad
-        label: Standing quad stretch
-        sides: [left, right]
-      - id: lat
-        label: Lat stretch
-      - id: deadhang
-        label: Dead hang
-      - id: childs
-        label: Child's pose
-      - id: calf
-        label: Calf raises
-        sides: [left, right]
+  holds_s: 30  # fixed by the voice clips ("30 seconds"); changing this needs new clips
+  days:
+    monday:
+      rounds: 2
+      moves:
+        - id: hipflexor
+          label: Hip flexor stretch
+          sides: [left, right]
+        - id: hamstring
+          label: Standing hamstring hinge
+          sides: [left, right]
+        - id: quad
+          label: Standing quad stretch
+          sides: [left, right]
+        - id: lat
+          label: Lat stretch
+        - id: chest
+          label: Chest stretch
+          sides: [left, right]
+        - id: childs
+          label: Child's pose
+    wednesday:
+      # round 1 is Monday's routine plus a calf stretch;
+      # round 2 swaps the chest stretch for a dead hang
+      round1:
+        - id: hipflexor
+          label: Hip flexor stretch
+          sides: [left, right]
+        - id: hamstring
+          label: Standing hamstring hinge
+          sides: [left, right]
+        - id: quad
+          label: Standing quad stretch
+          sides: [left, right]
+        - id: lat
+          label: Lat stretch
+        - id: chest
+          label: Chest stretch
+          sides: [left, right]
+        - id: childs
+          label: Child's pose
+        - id: calf
+          label: Calf stretch
+          sides: [left, right]
+      round2:
+        - id: hipflexor
+          label: Hip flexor stretch
+          sides: [left, right]
+        - id: hamstring
+          label: Standing hamstring hinge
+          sides: [left, right]
+        - id: quad
+          label: Standing quad stretch
+          sides: [left, right]
+        - id: lat
+          label: Lat stretch
+        - id: deadhang
+          label: Dead hang
+        - id: childs
+          label: Child's pose
+        - id: calf
+          label: Calf stretch
+          sides: [left, right]
+    friday:
+      # Monday's routine with a dead hang for the lats (scapular pull-ups)
+      # instead of the lat stretch
+      rounds: 2
+      moves:
+        - id: hipflexor
+          label: Hip flexor stretch
+          sides: [left, right]
+        - id: hamstring
+          label: Standing hamstring hinge
+          sides: [left, right]
+        - id: quad
+          label: Standing quad stretch
+          sides: [left, right]
+        - id: chest
+          label: Chest stretch
+          sides: [left, right]
+        - id: deadhang
+          label: Dead hang
+        - id: childs
+          label: Child's pose
